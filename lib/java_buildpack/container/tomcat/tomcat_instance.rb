@@ -96,7 +96,8 @@ module JavaBuildpack
           FileUtils.mkdir_p @droplet.sandbox
           shell "tar xzf #{file.path} -C #{@droplet.sandbox} --strip 1 --exclude webapps 2>&1"
 
-       shell "mkdir #{@droplet.sandbox}/osgi --strip 1 --exclude webapps 2>&1"           
+           
+          FileUtils.mkdir_p "#{@droplet.sandbox}/osgi"
 
 
 
