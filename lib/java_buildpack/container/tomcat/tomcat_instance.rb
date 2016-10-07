@@ -45,13 +45,13 @@ module JavaBuildpack
           FileUtils.mkdir_p "#{@droplet.root}/.java-buildpack/data"
 
          puts " jsl - #{@droplet.root}/.java-buildpack/osgi"
-         
-
          puts "#jsl dir - #{root()}/osgi"
 
           FileUtils.cp_r(Dir["#{root()}/osgi/**"],"#{@droplet.root}/.java-buildpack/osgi")
 
-          puts "done with osgi"
+          FileUtils.cp_r(Dir["#{root()}/data/**"],"#{@droplet.root}/.java-buildpack/data")
+
+          puts "done with data & osgi"
 
 
 
