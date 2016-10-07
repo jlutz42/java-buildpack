@@ -48,6 +48,8 @@ module JavaBuildpack
          puts "#jsl - #{@droplet.sandbox}/osgi"
          puts "#jsl root - #{@application.root}/osgi"
 
+         puts "#jsl dir - #{root()}"
+
           # FileUtils.cp_r(Dir["#{@droplet.root}/osgi/**"],"#{@droplet.root}/.java-buildpack/osgi")
           puts "done with osgi"
 
