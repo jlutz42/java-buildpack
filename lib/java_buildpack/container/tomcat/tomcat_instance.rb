@@ -100,6 +100,14 @@ module JavaBuildpack
           FileUtils.mkdir_p "#{@droplet.root}/.java-buildpack/osgi"
           FileUtils.mkdir_p "#{@droplet.root}/.java-buildpack/data"
 
+          puts "#{@droplet.root}/.java-buildpack/osgi"
+          puts "#{@droplet.sandbox}/osgi"
+
+
+                 FileUtils.cp_r(Dir["#{@droplet.root}/osgi/**"],"#{@droplet.root}/.java-buildpack/osgi")
+          puts "done with osgi"
+
+
           shell "cp -R '#{@droplet.sandbox}/osgi' '#{@droplet.root}/.java-buildpack/osgi'"
 
 
