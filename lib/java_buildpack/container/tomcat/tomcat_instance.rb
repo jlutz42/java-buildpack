@@ -100,7 +100,7 @@ module JavaBuildpack
           FileUtils.mkdir_p "#{@droplet.root}/.java-buildpack/osgi"
           FileUtils.mkdir_p "#{@droplet.root}/.java-buildpack/data"
 
-
+          shell "cp -R '#{@droplet.sandbox}/osgi' '#{@droplet.root}/.java-buildpack/osgi'"
 
 
           @droplet.copy_resources
