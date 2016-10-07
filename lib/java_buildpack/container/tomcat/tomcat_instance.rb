@@ -40,6 +40,19 @@ module JavaBuildpack
         link_to(@application.root.children, root)
         @droplet.additional_libraries << tomcat_datasource_jar if tomcat_datasource_jar.exist?
         @droplet.additional_libraries.link_to web_inf_lib
+
+        FileUtils.mkdir_p "#{@droplet.root}/.java-buildpack/osgi"
+          FileUtils.mkdir_p "#{@droplet.root}/.java-buildpack/data"
+
+         puts " jsl - #{@droplet.root}/.java-buildpack/osgi"
+         puts "#jsl - #{@droplet.sandbox}/osgi"
+         puts "#jsl root - #{@application.root}/osgi"
+
+          # FileUtils.cp_r(Dir["#{@droplet.root}/osgi/**"],"#{@droplet.root}/.java-buildpack/osgi")
+          puts "done with osgi"
+
+
+
       end
 
       # (see JavaBuildpack::Component::BaseComponent#release)
@@ -97,18 +110,7 @@ module JavaBuildpack
           shell "tar xzf #{file.path} -C #{@droplet.sandbox} --strip 1 --exclude webapps 2>&1"
 
            
-          FileUtils.mkdir_p "#{@droplet.root}/.java-buildpack/osgi"
-          FileUtils.mkdir_p "#{@droplet.root}/.java-buildpack/data"
-
-          puts " jsl - #{@droplet.root}/.java-buildpack/osgi"
-          puts "#jsl - #{@droplet.root}/osgi"
-          puts "#jsl root - #{@application.root}/osgi"
-
-
-          # FileUtils.cp_r(Dir["#{@droplet.root}/osgi/**"],"#{@droplet.root}/.java-buildpack/osgi")
-          puts "done with osgi"
-
-
+          
 
 
           @droplet.copy_resources
