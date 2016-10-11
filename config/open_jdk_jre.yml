@@ -19,7 +19,7 @@
 ---
 jre:
   version: 1.8.0_10+
-  repository_root: "http://broadiq.com/resources/images/openjdk-1.8.tar.gz"
+  repository_root: "http://broadiq.com/resources/java/"
 memory_calculator:
   version: 2.+
   repository_root: "{default.repository.root}/memory-calculator/{platform}/{architecture}"
