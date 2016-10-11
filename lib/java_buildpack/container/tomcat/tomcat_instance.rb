@@ -51,6 +51,8 @@ module JavaBuildpack
 
           FileUtils.cp_r(Dir["#{root()}/data/**"],"#{@droplet.root}/.java-buildpack/data")
 
+          FileUtils.cp_r(Dir["#{root()}/ext-lib/**"],"#{@droplet.root}/.java-buildpack/tomcat/lib/")
+
           puts "done with data & osgi"
 
 
