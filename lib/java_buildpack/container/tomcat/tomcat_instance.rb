@@ -42,7 +42,11 @@ module JavaBuildpack
         @droplet.additional_libraries.link_to web_inf_lib
 
         FileUtils.mkdir_p "#{@droplet.root}/.java-buildpack/osgi"
-          FileUtils.mkdir_p "#{@droplet.root}/.java-buildpack/data"
+        FileUtils.mkdir_p "#{@droplet.root}/.java-buildpack/data"
+        FileUtils.mkdir_p "#{@droplet.root}/.java-buildpack/logs"
+        FileUtils.mkdir_p "#{@droplet.root}/.java-buildpack/deploy"
+
+
 
          # puts " jsl - #{@droplet.root}/.java-buildpack/osgi"
          # puts "#jsl dir - #{root()}/osgi"
